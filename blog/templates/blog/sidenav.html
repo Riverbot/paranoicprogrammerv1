@@ -1,0 +1,9 @@
+{% block content %}
+
+<div class="sidenav">
+	{% for post in posts %}
+		<a href="{% url 'blog:python_django' subject=subject.url_name pk=post.pk %}">{{ post.title }}</a>
+	{% endfor %}
+</div>
+
+{% endblock %}

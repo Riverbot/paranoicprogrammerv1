@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="en">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Paranoic Programmer</title>
+	<!-- Bootstrap core CSS -->
+	<link href="{% static 'blog/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+	<!-- Custom fonts for this template -->
+	<link href="{% static 'blog/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+	<link href="{% static 'blog/vendor/simple-line-icons/css/simple-line-icons.css' %}" rel="stylesheet" type="text/css">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+	<!-- Custom styles for this template -->
+	<link href="{% static 'blog/css/landing-page.css' %}" rel="stylesheet">
+
+</head>
+
+<body>
+	<!-- Masthead -->
+	<header class="masthead text-white text-center">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-9 mx-auto">
+					<h1 class="mb-5">Paranoic Programmer!</h1>
+					<h2>Um blog sobre desenvolvimento de software e para provar que eu sei uma coisa ou outra sobre o assunto.</h2>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="testimonials text-center bg-light">
+		<h2>- Assuntos do Blog -</h2>
+	</section>
+
+	<!-- Image Showcases -->
+	<section class="showcase">
+		<div class="container-fluid p-0">
+			<div class="row m-0">
+				{% for subject in subjects %}
+				<div class="col-lg-4 padding-zero container">
+					<img class="showcase-image padding-zero col-lg-4" src="/static/blog/img/{{subject.thumb_image}}" alt="Avatar" >
+					<a href="{% url 'blog:python_django' subject=subject.url_name %}">
+						<div class="middle padding-zero">
+							<div class="showcase-text padding-zero">{{subject.name}}</div>
+						</div>
+					</a>
+				</div>
+				{% endfor %}
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials -->
+	<section class="testimonials text-center bg-light">
+		<h2>- Sobre o Desenvolvedor deste Blog -</h2>
+	</section>
+
+	<!-- Call to Action -->
+	<section class="call-to-action text-white text-center">
+		<div class="overlay bottom"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-lg-8 col-xl-3 mx-auto">
+					<form>
+						<div class="form-row">
+							<div class="testimonial-item mx-auto mb-5 mb-lg-0">
+								<img class="img-fluid rounded-circle mb-3" src="{% static 'blog/img/avatar.jpg' %}" alt="">
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="col-xl-9 mx-auto text-lg-left">
+					<h2 class="mb-4">Henrique Gustavo dos Santos Oliveira</h2>
+					<p>Formando em Desenvolvimento de jogos pela Fatec Carapícuiba, amante de desenvolvimento Web e futuro Arquiteto de Software.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer bg-light">
+		<div class="container">
+			<div class="row ml-auto mr-auto">
+				<ul class="list-inline mb-0 ml-auto mr-auto">
+					<li class="list-inline-item">
+						<a href="https://www.linkedin.com/in/henrique-gustavo-oliveira-ab06b231/">
+							<i class="fa fa-linkedin fa-4x fa-fw"></i>
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="https://github.com/Riverbot">
+							<i class="fa fa-github fa-4x fa-fw"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Bootstrap core JavaScript -->
+	<script src="{% static 'blog/vendor/jquery/jquery.min.js' %}"></script>
+	<script src="{% static 'blog/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+</html>
